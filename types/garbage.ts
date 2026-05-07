@@ -1,6 +1,6 @@
 // 西宮市のゴミの分類
 export type GarbageCategory =
-  'burnable'  //もやすゴミ
+  | 'burnable'  //もやすゴミ
   | 'unburnable'  //その他不燃ゴミ
   | 'bottle'  //瓶
   | 'can_pet'  //缶・ペットボトル
@@ -22,4 +22,6 @@ export interface GarbageRule {
   label:string; // 表示名（例：「燃やすごみ」）
   color: string;  // UIで使う色（Tailwindのクラス名やHex）
   schedules: GarbageSchedule[]; // 収集日は複数あるので配列
+  bagType?: string; // ゴミ袋の種類
+  items: string[]; // 代表的なゴミの例
 }
